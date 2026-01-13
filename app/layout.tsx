@@ -1,7 +1,10 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
+
+import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/tutorial/header";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -33,9 +36,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Header />
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
+
