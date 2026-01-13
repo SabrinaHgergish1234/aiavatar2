@@ -5,6 +5,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/tutorial/header";
+import Footer from "@/components/tutorial/footer";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -24,9 +25,7 @@ const geistSans = Geist({
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
@@ -38,10 +37,13 @@ export default function RootLayout({
         >
           <Header />
           <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
+
 
 
