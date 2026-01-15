@@ -9,7 +9,7 @@ export default function LandingHero() {
   if (pathname !== "/") return null;
 
   const ctaClass =
-    "inline-flex items-center justify-center rounded-2xl border border-white px-10 py-3 text-lg text-white transition-colors duration-200 hover:bg-[#E08E10] hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black";
+    "rounded-full px-4 py-1.5 border border-white text-white transition-colors duration-200 hover:bg-[#E08E10] hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
 
   return (
     <section className="w-full">
@@ -34,13 +34,10 @@ export default function LandingHero() {
 
         {/* Right */}
         <div className="mx-auto w-full max-w-md">
-          <div className="relative aspect-square">
-            {/* Outer white frame */}
+          <div className="relative aspect-square animate-float">
             <div className="absolute inset-0 border-4 border-white" />
-            {/* Inner faint frame */}
             <div className="absolute inset-8 border border-white/25" />
 
-            {/* Image */}
             <div className="absolute inset-0 grid place-items-center">
               <Image
                 src="/robot-head.png"
@@ -57,3 +54,4 @@ export default function LandingHero() {
     </section>
   );
 }
+
