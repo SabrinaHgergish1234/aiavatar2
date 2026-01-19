@@ -3,6 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import SpinningCube from "@/components/spinning-cube";
+
+
 
 export default function LandingHero() {
   const pathname = usePathname();
@@ -16,7 +19,7 @@ export default function LandingHero() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 py-16 md:grid-cols-2">
         {/* Left */}
         <div>
-          <h1 className="text-5xl font-medium leading-tight md:text-6xl">
+          <h1 className="text-3xl font-light leading-tight md:text-5xl">
             Hello!
             <br />
             Welcome to AIAvatar
@@ -32,26 +35,31 @@ export default function LandingHero() {
           </div>
         </div>
 
-        {/* Right */}
-        <div className="mx-auto w-full max-w-md">
-          <div className="relative aspect-square animate-float">
-            <div className="absolute inset-0 border-4 border-white" />
-            <div className="absolute inset-8 border border-white/25" />
+{/* Right */}
+<div className="mx-auto w-full max-w-md">
+  <div className="relative aspect-square w-full">
+    <SpinningCube size={310} />
 
-            <div className="absolute inset-0 grid place-items-center">
-              <Image
-                src="/robot-head.png"
-                alt="AI Avatar"
-                width={360}
-                height={360}
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
-        </div>
+  {/* Image inside the cube */}
+<div className="absolute inset-0 grid place-items-center pointer-events-none cube-center">
+  <Image
+    src="/3D_head.png"
+    alt="AI Avatar"
+    width={260}
+    height={260}
+    className="object-contain"
+    priority
+  />
+</div>
+
+  </div>
+</div>
+
+
+
       </div>
     </section>
   );
 }
+
 
