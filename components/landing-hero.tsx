@@ -42,14 +42,15 @@ export default function LandingHero() {
 
   {/* Image inside the cube */}
 <div className="absolute inset-0 grid place-items-center pointer-events-none cube-center">
-  <Image
-    src="/3D_head.png"
-    alt="AI Avatar"
-    width={260}
-    height={260}
-    className="object-contain"
-    priority
-  />
+ <Image
+  src="/3D_head.png"
+  alt="AI Avatar"
+  width={260}
+  height={260}
+  className="object-contain"
+  priority
+/>
+
 </div>
 
   </div>
